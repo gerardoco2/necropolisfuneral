@@ -25,7 +25,6 @@ export default function Home() {
       {/* <DefaultLayout>
         <ECommerce />
       </DefaultLayout> */}
-        <MainHeader />
       <main>
         {/* <HeroSlider/> */}
         <Hero/>
@@ -34,10 +33,10 @@ export default function Home() {
         <About />
       {/* <Testimonial /> */}
 
-      {/* <Blog /> */}
+      <Blog />
 
       </main>
-      <Footer />
+      {/* <Footer /> */}
       {/* <ScrollToTop /> */}
     </>
   );

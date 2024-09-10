@@ -24,7 +24,7 @@ const SingleBlogPage = async () => {
                   <div className="relative">
                     <input
                       type="text"
-                      placeholder="Search Here..."
+                      placeholder="Busca aqui..."
                       className="w-full rounded-lg border border-stroke px-6 py-4 shadow-solid-12 focus:border-primary focus:outline-none dark:border-strokedark dark:bg-black dark:shadow-none dark:focus:border-primary"
                     />
 
@@ -49,25 +49,23 @@ const SingleBlogPage = async () => {
 
               <div className="animate_top mb-10 rounded-md border border-stroke bg-white p-9 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
                 <h4 className="mb-7.5 text-2xl font-semibold text-black dark:text-white">
-                  Categories
+                  Categorias
                 </h4>
 
                 <ul>
                   <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                    <a href="#">Blog</a>
+                    <a href="#">Obituarios</a>
                   </li>
                   <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                    <a href="#">Events</a>
+                    <a href="#">El Mundo Funerario</a>
                   </li>
                   <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                    <a href="#">Grids</a>
+                    <a href="#">Regional</a>
                   </li>
                   <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                    <a href="#">News</a>
+                    <a href="#">Internacional</a>
                   </li>
-                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
-                    <a href="#">Rounded</a>
-                  </li>
+
                 </ul>
               </div>
 
@@ -79,7 +77,7 @@ const SingleBlogPage = async () => {
                 <div className="mb-10 w-full overflow-hidden ">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
-                      src={"/images/blog/blog-01.png"}
+                      src={"/images/blog/98.webp"}
                       alt="Kobe Steel plant that supplied"
                       fill
                       className="rounded-md object-cover object-center"
@@ -88,75 +86,43 @@ const SingleBlogPage = async () => {
                 </div>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Kobe Steel plant that supplied
+                El mundo funerario se actualiza dentro del mundo online
                 </h2>
 
                 <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
                   <li>
-                    <span className="text-black dark:text-white">Author: </span>{" "}
-                    Jhon Doe
+                    <span className="text-black dark:text-white">Autor: </span>{" "}
+                    Gerardo Colina
                   </li>
                   <li>
                     <span className="text-black dark:text-white">
-                      Published On: July 30, 2023
+                      Publicado el: 10 sept, 2024
                     </span>{" "}
                   </li>
                   <li>
                     <span className="text-black dark:text-white">
-                      Category:
+                      Categoria:
                     </span>
-                    Events
+                    El mundo funerario
                   </li>
                 </ul>
 
                 <div className="blog-details">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur
-                    leo. Ut venenatis rhoncus quam sed condimentum. Curabitur
-                    vel turpis in dolor volutpat imperdiet in ut mi. Integer non
-                    volutpat nulla. Nunc elementum elit viverra, tempus quam
-                    non, interdum ipsum.
+                  Las tecnologías digitales han cambiado la sociedad en todos sus aspectos, 
+                  por eso las funerarias han tenido que dar el salto a internet para facilitar sus servicios.
                   </p>
 
                   <p>
-                    Aenean augue ex, condimentum vel metus vitae, aliquam porta
-                    elit. Quisque non metus ac orci mollis posuere. Mauris vel
-                    ipsum a diam interdum ultricies sed vitae neque. Nulla
-                    porttitor quam vitae pulvinar placerat. Nulla fringilla elit
-                    sit amet justo feugiat sodales. Morbi eleifend, enim non
-                    eleifend laoreet, odio libero lobortis lectus, non porttitor
-                    sem urna sit amet metus. In sollicitudin quam est,
-                    pellentesque consectetur felis fermentum vitae.
+                  El mundo funerario ha tenido que adaptarse a los nuevos tiempos y, para ello, no solo ha tenido que crearse un sitio web o facilitar el acceso a servicios online, también se ha visto obligado a innovar, ofreciendo funerales en remoto, flores online y todo tipo de servicios y gestiones relacionadas con un fallecimiento.
+
+
+Grandes empresas funerarias como Interfunerarias ofrecen a sus clientes la posibilidad de contratar servicios funerarios vía online. Por otro lado, también dentro de este sector, se pueden encontrar portales únicamente dedicados a la venta de flores funerarias o simplemente directorios con toda la información que se pudiera necesitar para hacer frente a una situación de este tipo.
+
+Toda esta revolución se ha producido en gran parte debido a la pandemia y, como consecuencia de ello, este sector ha tenido que reinventarse para ofrecer a sus clientes una solución cómoda, adaptativa y flexible para quienes les contratan.
                   </p>
 
-                  <div className="flex flex-wrap gap-5">
-                    <Image
-                      src={"/images/blog/blog-01.png"}
-                      width={350}
-                      height={200}
-                      alt="image"
-                    />
-                    <Image
-                      src={"/images/blog/blog-02.png"}
-                      width={350}
-                      height={200}
-                      alt="image"
-                    />
-                  </div>
-
-                  <h3 className="pt-8">
-                    Nunc elementum elit viverra, tempus quam non
-                  </h3>
-
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur
-                    leo. Ut venenatis rhoncus quam sed condimentum. Curabitur
-                    vel turpis in dolor volutpat imperdiet in ut mi. Integer non
-                    volutpat nulla. Nunc elementum elit viverra, tempus quam
-                    non, interdum ipsum.
-                  </p>
+                  
                 </div>
 
                 <SharePost />

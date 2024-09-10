@@ -44,10 +44,10 @@ export default function RootLayout({
         defaultTheme="light"
       >
         {/* <Lines /> */}
-        {/* <MainHeader /> */}
+        <MainHeader />
         {/* <ToasterContext /> */}
         {children}
-        {/* <Footer /> */}
+        <Footer />
         <ScrollToTop />
       </ThemeProvider>
     </body>
