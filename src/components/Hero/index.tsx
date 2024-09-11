@@ -16,13 +16,13 @@ const Hero = () => {
     
       <section className="relative overflow-hidden min-h-screen w-screen h-screen pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
       
-      <video className="absolute top-0 left-0  w-full h-full object-cover" autoPlay loop playsInline muted >
-        <source src="/videos/video2.mp4" type="video/mp4" />
+      <video className="absolute top-0 left-0 w-full h-full object-cover" autoPlay loop playsInline muted >
+        <source src="/videos/earthvideo.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0  flex flex-col align-center items-center justify-center mx-5" >
-        <div className="backdrop-opacity-10 xs:w-full md:w-3/4 lg:3/4 backdrop-invert bg-white/30 flex flex-col items-center justify-center" >
-          <Image src="/images/logo/logo_necrolpolis-dark.png" width={600} height={700} alt=""/>
+        <div className=" xs:w-full md:w-3/4 lg:3/4  flex flex-col items-center justify-center" >
+          <Image src="/images/logo/logo_necrolpolishome_light.png" width={600} height={700} alt=""/>
           <p className="w-3/4 text-center text-black font-semibold my-8">Empresa Falconiana de Servicios Funerarios, especialistas en la administración, creación, desarrollo, asesorías online sobre la ordenanza de ley, desinfección de áreas, planificación para cementerios públicos municipales y privados, planes de previsión familiar individuales y colectivos</p>
         </div>
       </div>

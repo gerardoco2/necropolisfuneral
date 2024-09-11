@@ -32,7 +32,7 @@ const Header = () => {
       className={`fixed left-0 top-0 z-99999 w-full py-7 ${
         stickyMenu
           ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
-          : "bg-white opacity-100"
+          : ""
       }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
@@ -40,7 +40,7 @@ const Header = () => {
           <Link href="/" className="pl-4">
 
             <Image
-              src="/images/logo/logo_necrolpolis-dark.png"
+              src="/images/logo/logo_necrolpolishome_light.png"
               alt="logo"
               width={150}
               height={30}
@@ -153,7 +153,7 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            {/* <ThemeToggler /> */}
+            <ThemeToggler />
 
             {/* <Link
               href="https://github.com/NextJSTemplates/solid-nextjs"
