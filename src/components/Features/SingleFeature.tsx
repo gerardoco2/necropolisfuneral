@@ -31,7 +31,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
       >
         <div className="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary">
           {/* <Image src={icon} width={36} height={36} alt="title" /> */}
-          <feature.icon className="text-white absolute text-2xl" />
+          <feature.icon className="text-terciary absolute text-2xl" />
         </div>
         <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">
           {title}
