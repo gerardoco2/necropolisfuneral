@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="absolute inset-0  flex flex-col align-center items-center justify-center mx-5" >
         <div className=" xs:w-full md:w-3/4 lg:3/4  flex flex-col items-center justify-center" >
           <Image src="/images/logo/logo_necrolpolishome_light.png" width={600} height={700} alt=""/>
-          <p className="w-3/4 text-center text-black font-semibold my-8">Empresa Falconiana de Servicios Funerarios, especialistas en la administración, creación, desarrollo, asesorías online sobre la ordenanza de ley, desinfección de áreas, planificación para cementerios públicos municipales y privados, planes de previsión familiar individuales y colectivos</p>
+          <p className="w-3/4 text-center text-white font-semibold my-8">Empresa Falconiana de Servicios Funerarios, especialistas en la administración, creación, desarrollo, asesorías online sobre la ordenanza de ley, desinfección de áreas, planificación para cementerios públicos municipales y privados, planes de previsión familiar individuales y colectivos</p>
         </div>
       </div>
 
