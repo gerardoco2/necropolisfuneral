@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
-
+  setTheme("dark");
   return (
     <button
       aria-label="theme toggler"

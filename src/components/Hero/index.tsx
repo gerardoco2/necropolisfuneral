@@ -17,7 +17,7 @@ const Hero = () => {
       <section className="relative overflow-hidden min-h-screen w-screen h-screen pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
       
       <video className="absolute top-0 left-0 w-full h-full object-cover" autoPlay loop playsInline muted >
-        <source src="/videos/earthvideo.mp4" type="video/mp4" />
+        <source src="/videos/0910.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0  flex flex-col align-center items-center justify-center mx-5" >

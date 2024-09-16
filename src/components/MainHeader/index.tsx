@@ -31,26 +31,26 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-99999 w-full py-7 ${
         stickyMenu
-          ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
-          : ""
+          ? "  bg-gradient-to-b from-black to-white-1/2"
+          : "bg-gradient-to-b from-[#171716] to-white-1/2"
       }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
-          <Link href="/" className="pl-4">
+          <Link href="/" className="pl-4  ">
 
             <Image
               src="/images/logo/logo_necrolpolishome_light.png"
               alt="logo"
-              width={150}
-              height={30}
+              width={160}
+              height={50}
               className="hidden w-full dark:block"
             />
             <Image
               src="/images/logo/logo_necrolpolis-dark.png"
               alt="logo"
-              width={150}
-              height={30}
+              width={10}
+              height={60}
               className="w-full dark:hidden"
             />
           </Link>
@@ -104,14 +104,14 @@ const Header = () => {
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+            <ul className="flex flex-col gap-5 text-secondary xl:flex-row xl:items-center xl:gap-10 mt-3.5">
               {menuData.map((menuItem, key) => (
                 <li key={key} className={menuItem.submenu && "group relative"}>
                   {menuItem.submenu ? (
                     <>
                       <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+                        className="flex cursor-pointer items-center justify-between gap-3  hover:text-terciary"
                       >
                         {menuItem.title}
                         <span>
@@ -140,8 +140,8 @@ const Header = () => {
                       href={`${menuItem.path}`}
                       className={
                         pathUrl === menuItem.path
-                          ? "text-primary hover:text-primary"
-                          : "hover:text-primary"
+                          ? "text-secondary hover:text-terciary"
+                          : "hover:text-terciary"
                       }
                     >
                       {menuItem.title}
@@ -163,8 +163,8 @@ const Header = () => {
             </Link> */}
 
             <Link
-              href="https://nextjstemplates.com/templates/solid"
-              className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+              href="#"
+              className="flex items-center justify-center rounded-full border-solid border-2 border-secondary  bg-primary px-4 py-1 text-regular text-white duration-300 ease-in-out hover:bg-[#171716]"
             >
               Acceder
             </Link>
