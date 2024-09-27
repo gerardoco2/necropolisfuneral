@@ -37,7 +37,7 @@ const Header = () => {
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
-          <Link href="/" className="pl-4  ">
+          <Link href="/" className="py-4  ">
 
             <Image
               src="/images/logo/logo_necrolpolishome_light.png"
@@ -153,7 +153,7 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            <ThemeToggler />
+            {/* <ThemeToggler /> */}
 
             {/* <Link
               href="https://github.com/NextJSTemplates/solid-nextjs"

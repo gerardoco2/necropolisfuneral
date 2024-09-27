@@ -241,3 +241,61 @@ input[type="search"]::-webkit-search-cancel-button {
 [x-cloak] {
     display: none !important;
 }
+
+.carousel {
+    /* background-color: grey; */
+    height: auto;
+}
+
+.contentContainer {
+    height: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.services {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     */
+     grid-template-columns: repeat(9, minmax(600px, 1fr));
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    padding: 0 4rem 0 4rem;
+}
+
+/* .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} */
+
+.image-container {
+    position: relative;
+    /* flex: 0 0 25%; */
+}
+
+.service-image {
+    width:600px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+/* img.image {
+    height: auto;
+    width: clamp(10rem, 50vw, 60rem);
+} */
+

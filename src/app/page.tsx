@@ -12,6 +12,7 @@ import { ThemeProvider } from "next-themes";
 import HeroSlider from "@/components/HeroSlider/HeroSlider";
 import Testimonial from "@/components/Testimonial";
 import Blog from "@/components/Blog";
+import HorizontalScroll from "@/components/HorizontalScroll";
 
 export const metadata: Metadata = {
   title:
@@ -29,6 +30,7 @@ export default function Home() {
         {/* <HeroSlider/> */}
         <Hero/>
         <Brands />
+        <HorizontalScroll/>
         <Feature />
         <About />
       {/* <Testimonial /> */}

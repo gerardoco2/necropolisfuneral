@@ -10,7 +10,7 @@ export default function ScrollToTop() {
   // Top: 0 takes us all the way back to the top of the page
   // Behavior: smooth keeps it smooth!
   const openWhatsapp = () => {
-      push("https://wa.link/kv9bm7")
+      push("https://wa.link/qbvwtr")
   };
 
   useEffect(() => {
