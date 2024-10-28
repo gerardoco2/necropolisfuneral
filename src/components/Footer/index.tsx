@@ -48,7 +48,7 @@ const Footer = () => {
 
                 <p className="mb-10 mt-5">
                 Nuestros afiliados podrán solicitar apoyo a través del centro de atención 24 horas los 7 días de la semana por los teléfonos: +58 4121697620, +58 4126647320
-                +58 4144625281, +58 268414504
+                +58 4144625281, +58 4144305624
                 </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
