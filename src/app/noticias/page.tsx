@@ -12,11 +12,11 @@ import { useEffect, useState } from "react";
 //   // other metadata
 // };
 
-interface Props {
-  posts: Post[];
-}
+// interface Props {
+//   posts: Post[];
+// }
 
-const BlogPage = ({ posts }: Props) => {
+const BlogPage = () => {
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
