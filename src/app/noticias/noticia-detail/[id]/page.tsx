@@ -1,21 +1,43 @@
+"use client";
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
+import { Post } from "@/types/blog";
+import axios from "axios";
 import { Metadata } from "next";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-export const metadata: Metadata = {
-  title: "Blog Details Page - Solid SaaS Boilerplate",
-  description: "This is Blog details page for Solid Pro",
-  // other metadata
-};
+// export const metadata: Metadata = {
+//   title: "Blog Details Page - Solid SaaS Boilerplate",
+//   description: "This is Blog details page for Solid Pro",
+//   // other metadata
+// };
 
-const SingleBlogPage = async () => {
+const SingleBlogPage = ({ params }: { params: { id: number } }) => {
+  // const router = useRouter();
+
+  const [post, setPost] = useState<Post>();
+
+  const post_id = params.id;
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://graph.instagram.com/${post_id}?fields=id,media_type,media_url,caption&access_token=IGQWRPbVVhSS1STUFhSl81dHQxVmozOHNSMlU2a0NrSlRSQS1nQkRsRWVmMThmeXlUcl9MYWNwamZAOWEtIUHR1Y0w3dDFwUGZATUHRhUlQ0VjVOeTBTVDdjaUtTRkJkOGRtTFZA6X0lzeHhYTW9mQUhYUjlaVU9udGMZD`,
+      )
+      .then((resp) => {
+        setPost(resp.data);
+        console.log("este: ", resp.data);
+      });
+  }, [post]);
+
   return (
     <>
       <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
-            <div className="md:w-1/2 lg:w-[32%]">
+            <div className="lg:w-20%] md:w-1/4">
               <div className="animate_top mb-10 rounded-md border border-stroke bg-white p-3.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
                 <form
                   action="https://formbold.com/s/unique_form_id"
@@ -65,29 +87,31 @@ const SingleBlogPage = async () => {
                   <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
                     <a href="#">Internacional</a>
                   </li>
-
                 </ul>
               </div>
 
-              <RelatedPost />
+              {/* <RelatedPost /> */}
             </div>
 
             <div className="lg:w-2/3">
               <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
                 <div className="mb-10 w-full overflow-hidden ">
-                  <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                    <Image
-                      src={"/images/blog/98.webp"}
-                      alt="Kobe Steel plant that supplied"
-                      fill
-                      className="rounded-md object-cover object-center"
-                    />
+                  <div className="relative mx-auto flex aspect-[97/60] w-full items-center sm:aspect-[97/44] ">
+                    <div>
+                      {post && post?.media_type == "VIDEO" ? (
+                        <video muted preload="none" autoPlay playsInline>
+                          <source src={post.media_url} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : // <Image src={post.media_url} alt="pic" fill />
+                      null}
+                    </div>
                   </div>
                 </div>
-
+                {/* 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                El mundo funerario se actualiza dentro del mundo online
-                </h2>
+                  El mundo funerario se actualiza dentro del mundo online
+                </h2> */}
 
                 <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
                   <li>
@@ -99,30 +123,16 @@ const SingleBlogPage = async () => {
                       Publicado el: 10 sept, 2024
                     </span>{" "}
                   </li>
-                  <li>
+                  {/* <li>
                     <span className="text-black dark:text-white">
                       Categoria:
                     </span>
                     El mundo funerario
-                  </li>
+                  </li> */}
                 </ul>
 
                 <div className="blog-details">
-                  <p>
-                  Las tecnologías digitales han cambiado la sociedad en todos sus aspectos, 
-                  por eso las funerarias han tenido que dar el salto a internet para facilitar sus servicios.
-                  </p>
-
-                  <p>
-                  El mundo funerario ha tenido que adaptarse a los nuevos tiempos y, para ello, no solo ha tenido que crearse un sitio web o facilitar el acceso a servicios online, también se ha visto obligado a innovar, ofreciendo funerales en remoto, flores online y todo tipo de servicios y gestiones relacionadas con un fallecimiento.
-
-
-Grandes empresas funerarias como Interfunerarias ofrecen a sus clientes la posibilidad de contratar servicios funerarios vía online. Por otro lado, también dentro de este sector, se pueden encontrar portales únicamente dedicados a la venta de flores funerarias o simplemente directorios con toda la información que se pudiera necesitar para hacer frente a una situación de este tipo.
-
-Toda esta revolución se ha producido en gran parte debido a la pandemia y, como consecuencia de ello, este sector ha tenido que reinventarse para ofrecer a sus clientes una solución cómoda, adaptativa y flexible para quienes les contratan.
-                  </p>
-
-                  
+                  <p>{post?.caption}</p>
                 </div>
 
                 <SharePost />

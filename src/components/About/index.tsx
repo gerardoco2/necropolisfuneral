@@ -35,7 +35,7 @@ const About = () => {
                 fill
               />
               <Image
-                src="/images/galeria/galeria_78.jpg"
+                src="/images/galeria/condolence.jpg"
                 alt="About"
                 className="hidden dark:block"
                 fill
@@ -59,9 +59,8 @@ const About = () => {
               viewport={{ once: true }}
               className="animate_right md:w-1/2"
             >
-
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                  Responsabilidad y compromiso con nuestros clientes.
+                Responsabilidad y compromiso con nuestros clientes.
               </h2>
 
               <div className="mt-7.5 flex items-center gap-5">
@@ -74,7 +73,10 @@ const About = () => {
                   <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
                     Seriedad
                   </h3>
-                  <p> en el cumplimiento de todos los servicios que ofrecemos.</p>
+                  <p>
+                    {" "}
+                    en el cumplimiento de todos los servicios que ofrecemos.
+                  </p>
                 </div>
               </div>
               <div className="mt-7.5 flex items-center gap-5">
@@ -85,9 +87,14 @@ const About = () => {
                 </div>
                 <div className="w-3/4">
                   <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
-                  Respeto
+                    Respeto
                   </h3>
-                  <p> para con nuestros Clientes y Afiliados, así como también el buen trato al doliente y público en general, religiones y costumbres.</p>
+                  <p>
+                    {" "}
+                    para con nuestros Clientes y Afiliados, así como también el
+                    buen trato al doliente y público en general, religiones y
+                    costumbres.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -119,14 +126,13 @@ const About = () => {
               className="animate_left md:w-1/2"
             >
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                  Mejor precio y ubicación.
+                Mejor precio y ubicación.
               </h2>
               <p>
-              Nos ajustamos al presupuesto de quienes solicitan directamente nuestros servicios funerarios.
+                Nos ajustamos al presupuesto de quienes solicitan directamente
+                nuestros servicios funerarios.
               </p>
-              <div>
-              
-              </div>
+              <div></div>
             </motion.div>
             <motion.div
               variants={{

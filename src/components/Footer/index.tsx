@@ -38,17 +38,17 @@ const Footer = () => {
                     className="dark:hidden"
                   />
                   <Image
-                    width={110}
+                    width={250}
                     height={80}
-                    src="/images/logo/logo-dark.svg"
+                    src="/images/logo/logo_necrolpolishome_light.png"
                     alt="Logo"
                     className="hidden dark:block"
                   />
                 </a>
 
                 <p className="mb-10 mt-5">
-                Nuestros afiliados podrán solicitar apoyo a través del centro de atención 24 horas los 7 días de la semana por los teléfonos: +58 4121697620, +58 4126647320
-                +58 4144625281, +58 4144305624
+                Nuestros afiliados podrán solicitar apoyo a través del centro de atención 24 horas los 7 días de la semana por los teléfonos: +58 412-169-76-20, +58 412-664-73-20
+                +58 414-462-52-81, +58 414-430-56-24
                 </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">

@@ -5,8 +5,8 @@ import "@/css/satoshi.css";
 import "@/css/style.css";
 import React, { useEffect, useState } from "react";
 import Loader from "@/components/common/Loader";
-import { ThemeProvider } from "next-themes";
-import { Inter } from 'next/font/google';
+import { ThemeProvider, useTheme } from "next-themes";
+import { Inter } from "next/font/google";
 import Lines from "@/components/Lines";
 import MainHeader from "@/components/MainHeader";
 import Footer from "@/components/Footer";
@@ -23,7 +23,8 @@ export default function RootLayout({
   const [loading, setLoading] = useState<boolean>(true);
 
   // const pathname = usePathname();
-
+  const { theme, setTheme } = useTheme();
+  setTheme("dark");
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
@@ -37,20 +38,20 @@ export default function RootLayout({
     //   </body>
     // </html>
     <html lang="en" suppressHydrationWarning>
-    <body className={`dark:bg-black ${inter.className}`}>
-      <ThemeProvider
-        enableSystem={false}
-        attribute="class"
-        defaultTheme="light"
-      >
-        {/* <Lines /> */}
-        <MainHeader />
-        {/* <ToasterContext /> */}
-        {children}
-        <Footer />
-        <ScrollToTop />
-      </ThemeProvider>
-    </body>
-  </html>
+      <body className={`dark:bg-black ${inter.className}`}>
+        <ThemeProvider
+          enableSystem={false}
+          attribute="class"
+          defaultTheme="dark"
+        >
+          {/* <Lines /> */}
+          <MainHeader />
+          {/* <ToasterContext /> */}
+          {children}
+          <Footer />
+          <ScrollToTop />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

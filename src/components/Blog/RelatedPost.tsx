@@ -17,17 +17,17 @@ const RelatedPost = async () => {
               className="mb-7.5 flex flex-wrap gap-4 xl:flex-nowrap 2xl:gap-6"
               key={key}
             >
-              <div className="max-w-45 relative h-18 w-45">
-                {post.mainImage ? (
+              <div className="relative h-18 w-45 max-w-45">
+                {/* {post.mainImage ? (
                   <Image fill src={post.mainImage} alt="Blog" />
                 ) : (
                   "No image"
-                )}
+                )} */}
               </div>
               <h5 className="text-md font-medium text-black transition-all duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
                 <Link href={`/blog/blog-details`}>
                   {" "}
-                  {post.title.slice(0, 40)}...
+                  {/* {post.title.slice(0, 40)}... */}
                 </Link>
               </h5>
             </div>

@@ -13,10 +13,9 @@ import HeroSlider from "@/components/HeroSlider/HeroSlider";
 import Testimonial from "@/components/Testimonial";
 import Blog from "@/components/Blog";
 import HorizontalScroll from "@/components/HorizontalScroll";
-
+import PostData from "../components/Blog/blogData";
 export const metadata: Metadata = {
-  title:
-    "Necropolis Funeral",
+  title: "Necropolis Funeral",
   description: "Un Mundo En Servicios Funerarios",
 };
 
@@ -28,15 +27,14 @@ export default function Home() {
       </DefaultLayout> */}
       <main>
         {/* <HeroSlider/> */}
-        <Hero/>
+        <Hero />
         <Brands />
-        <HorizontalScroll/>
+        <HorizontalScroll />
         <Feature />
         <About />
-      {/* <Testimonial /> */}
+        {/* <Testimonial /> */}
 
-      <Blog />
-
+        <Blog posts={PostData} />
       </main>
       {/* <Footer /> */}
       {/* <ScrollToTop /> */}

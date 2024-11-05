@@ -17,3 +17,10 @@ export type Blog = {
   tags?: string[];
   publishedAt?: string;
 };
+
+export type Post = {
+  id: number;
+  media_type: string;
+  media_url: string;
+  caption?: string;
+};
