@@ -31,7 +31,7 @@ const Blog = ({ posts }: Props) => {
           <SectionHeader
             headerInfo={{
               title: `Mantente al dia`,
-              subtitle: `Noticias y Obituarios`,
+              subtitle: `Noticias y Obituarios nuevos `,
               description: `Aqui podras encontrar nuestros obituarios y noticias mas recientes.`,
             }}
           />
