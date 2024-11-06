@@ -17,7 +17,7 @@ const Blog = ({ posts }: Props) => {
   useEffect(() => {
     axios
       .get(
-        "https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&access_token=IGQWRPbVVhSS1STUFhSl81dHQxVmozOHNSMlU2a0NrSlRSQS1nQkRsRWVmMThmeXlUcl9MYWNwamZAOWEtIUHR1Y0w3dDFwUGZATUHRhUlQ0VjVOeTBTVDdjaUtTRkJkOGRtTFZA6X0lzeHhYTW9mQUhYUjlaVU9udGMZD",
+        "https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&access_token=IGQWRNZAkphc3ROSndmejVPLXJ0VlAteDJXTjVIRFlGZAEFkbEdNUjVhaHMwbVVydVdzb0QxdFh2NUI4ZAm0xQkNvd0xZASEtuWlpXdUUtUzQzWTM3dXg1dmNlQXVwdmtmQ01IcnpsT0l2T3Y0NUlGeE9sbVpRMGNvVTAZD",
       )
       .then((resp) => {
         setNoticias(resp.data.data);
