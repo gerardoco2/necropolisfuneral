@@ -17,7 +17,7 @@ const Blog = ({ posts }: Props) => {
   useEffect(() => {
     axios
       .get(
-        "https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&access_token=IGQWRNZAkphc3ROSndmejVPLXJ0VlAteDJXTjVIRFlGZAEFkbEdNUjVhaHMwbVVydVdzb0QxdFh2NUI4ZAm0xQkNvd0xZASEtuWlpXdUUtUzQzWTM3dXg1dmNlQXVwdmtmQ01IcnpsT0l2T3Y0NUlGeE9sbVpRMGNvVTAZD",
+        "https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&access_token=IGQWRQeUdqcGhRZADZAQWFNENGh6d1Y2UTZAkdzF4OTJVdGpBRV9SQ0c3MmgyM0l4M2h3cm0wcmlWYmJEMGljT1dNMXFLbEZAOVmFqd2lyODJ2ZAWhuaFBObFV1MnRpRnA5Vkk4clJvUGx5aFZAqaUdwNkZATU0dxUXZA3WGcZD",
       )
       .then((resp) => {
         setNoticias(resp.data.data);
@@ -31,7 +31,7 @@ const Blog = ({ posts }: Props) => {
           <SectionHeader
             headerInfo={{
               title: `Mantente al dia`,
-              subtitle: `Noticias y Obituarios nuevos `,
+              subtitle: `Noticias y Obituarios nuevos  `,
               description: `Aqui podras encontrar nuestros obituarios y noticias mas recientes.`,
             }}
           />

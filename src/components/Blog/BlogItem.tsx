@@ -1,12 +1,9 @@
 "use client";
-import { Blog } from "@/types/blog";
 import { Post } from "@/types/blog";
 
-import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 const BlogItem = ({ post }: { post: Post }) => {
   // const { mainImage, title, metadata } = blog;

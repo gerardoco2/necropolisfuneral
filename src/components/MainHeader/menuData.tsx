@@ -73,7 +73,7 @@ const menuData: Menu[] = [
     id: 4,
     title: "Afiliacion",
     newTab: false,
-    path: "/support",
+    path: "/afiliacion",
   },
 ];
 
