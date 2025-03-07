@@ -11,6 +11,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
 
@@ -32,6 +33,10 @@ interface AfiliacionCompletaFormData {
 }
 
 const AfiliacionCompleta = () => {
+  const router = useRouter();
+  const enviar = () => {
+    router.push("/afiliacion/pago");
+  };
   const {
     register,
     handleSubmit,
@@ -213,7 +218,7 @@ const AfiliacionCompleta = () => {
           )}
 
           <HStack mt={5}>
-            <Button width="100%" type="submit">
+            <Button width="100%" type="submit" onClick={() => enviar()}>
               Enviar inscripcion
             </Button>
           </HStack>
