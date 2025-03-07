@@ -11,6 +11,7 @@ import Lines from "@/components/Lines";
 import MainHeader from "@/components/MainHeader";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,14 @@ export default function RootLayout({
 
   // const pathname = usePathname();
   const { theme, setTheme } = useTheme();
+
+  const themeChakra = extendTheme({
+    config: {
+      initialColorMode: "dark", // Set default to dark mode
+      useSystemColorMode: false, // Disable system color mode
+    },
+  });
+
   setTheme("dark");
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
@@ -38,18 +47,18 @@ export default function RootLayout({
     //   </body>
     // </html>
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${inter.className}`}>
+      <body className={`dark:bg-black dark:text-bodydark ${inter.className}`}>
         <ThemeProvider
           enableSystem={false}
           attribute="class"
           defaultTheme="dark"
         >
-          {/* <Lines /> */}
-          <MainHeader />
-          {/* <ToasterContext /> */}
-          {children}
-          <Footer />
-          <ScrollToTop />
+          <ChakraProvider theme={themeChakra}>
+            <ColorModeScript
+              initialColorMode={themeChakra.config.initialColorMode}
+            />
+            {children}
+          </ChakraProvider>
         </ThemeProvider>
       </body>
     </html>

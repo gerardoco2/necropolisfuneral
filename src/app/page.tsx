@@ -14,6 +14,7 @@ import Testimonial from "@/components/Testimonial";
 import Blog from "@/components/Blog";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import PostData from "../components/Blog/blogData";
+import PromoSuscripcion from "@/components/PromoSuscripcion";
 export const metadata: Metadata = {
   title: "Necropolis Funeral",
   description: "Un Mundo En Servicios Funerarios",
@@ -25,18 +26,23 @@ export default function Home() {
       {/* <DefaultLayout>
         <ECommerce />
       </DefaultLayout> */}
+      <MainHeader />
+
       <main>
-        {/* <HeroSlider/> */}
         <Hero />
+
         <Brands />
+        <PromoSuscripcion />
         <HorizontalScroll />
         <Feature />
         <About />
         {/* <Testimonial /> */}
 
-        <Blog posts={PostData} />
+        {/* <Blog posts={PostData} /> */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
+      <ScrollToTop />
+
       {/* <ScrollToTop /> */}
     </>
   );
