@@ -8,7 +8,7 @@ const PromoSuscripcion = () => {
   return (
     <section className=" py-20 lg:py-25 xl:py-30">
       <div className="mx-auto max-w-c-1235 overflow-hidden px-4 md:px-8 2xl:px-0">
-        <div className="flex items-center gap-8 lg:gap-32.5">
+        <div className="flex flex-col items-center gap-8 sm:flex-row lg:gap-32.5">
           <div className="md:w-1/2">
             <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
               Al completar tu afiliacion Online recibes
@@ -41,7 +41,7 @@ const PromoSuscripcion = () => {
               </ListItem>
             </List>
           </div>
-          <div className=" relative mx-auto hidden  md:block md:w-1/2">
+          <div className=" relative mx-auto  md:w-1/2">
             <Afiliacion />
           </div>
         </div>

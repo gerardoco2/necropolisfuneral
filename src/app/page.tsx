@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import Hero from "@/components/Hero";
 import Brands from "@/components/Brands";
-import Feature from "@/components/Features";
+import Feature from "@/components/Servicios";
 import About from "@/components/About";
 import MainHeader from "@/components/MainHeader";
 import Footer from "@/components/Footer";

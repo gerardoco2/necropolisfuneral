@@ -16,7 +16,8 @@ import React from "react";
 import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
 
 interface Beneficiario {
-  nombreCompleto: string;
+  nombre: string;
+  apellido: string;
   cedula: string;
   fechaNac: string;
   edad: number;
@@ -37,8 +38,11 @@ const AfiliacionCompleta = () => {
   const enviar = () => {
     router.push("/afiliacion/pago");
   };
+
   const {
     register,
+    setValue,
+    watch,
     handleSubmit,
     control,
     formState: { errors },
@@ -50,6 +54,24 @@ const AfiliacionCompleta = () => {
   });
 
   const onSubmit: SubmitHandler<AfiliacionCompletaFormData> = () => {};
+
+  // Función para calcular la edad
+  const calcularEdad = (fechaNac: string): number => {
+    const fechaNacimiento = new Date(fechaNac);
+    const hoy = new Date();
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+    // Ajustar la edad si aún no ha pasado el mes de cumpleaños
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+      edad--;
+    }
+
+    return edad;
+  };
+
+  // Observar cambios en los campos de fecha de nacimiento
+  const fechasNacimiento = watch("beneficiario");
 
   return (
     <Box
@@ -79,7 +101,7 @@ const AfiliacionCompleta = () => {
               })}
             />
             <Input
-              placeholder="numero de Ceunta bancaria"
+              placeholder="numero de cuenta bancaria"
               style={{ color: "white" }}
               {...register("numeroCta", {
                 required: " El Numero de cuenta  es obligatorio",
@@ -127,7 +149,7 @@ const AfiliacionCompleta = () => {
           )}
 
           <Heading as="h2" size="md" mt={6} mb={4}>
-            Registra los datos tus Beneficiarions :
+            Registra los datos tus Beneficiarion :
           </Heading>
           {fields.map((field, index) => (
             <Box
@@ -141,7 +163,15 @@ const AfiliacionCompleta = () => {
                 <FormControl>
                   <FormLabel>Nombre Completo:</FormLabel>
                   <Input
-                    {...register(`beneficiario.${index}.nombreCompleto`, {
+                    {...register(`beneficiario.${index}.nombre`, {
+                      required: "Este campo es obligatorio",
+                    })}
+                  />
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Apellido:</FormLabel>
+                  <Input
+                    {...register(`beneficiario.${index}.apellido`, {
                       required: "Este campo es obligatorio",
                     })}
                   />
@@ -162,6 +192,11 @@ const AfiliacionCompleta = () => {
                     type="date"
                     {...register(`beneficiario.${index}.fechaNac`, {
                       required: "Este campo es obligatorio",
+                      onChange: (e) => {
+                        const fechaNac = e.target.value;
+                        const edad = calcularEdad(fechaNac);
+                        setValue(`beneficiario.${index}.edad`, edad);
+                      },
                     })}
                   />
                 </FormControl>
@@ -173,6 +208,7 @@ const AfiliacionCompleta = () => {
                     {...register(`beneficiario.${index}.edad`, {
                       required: "Este campo es obligatorio",
                     })}
+                    readOnly
                   />
                 </FormControl>
 
@@ -198,10 +234,12 @@ const AfiliacionCompleta = () => {
           {/* Botón para agregar beneficiarios */}
           {fields.length < 10 ? (
             <Button
+              className="mt-5"
               colorScheme="teal"
               onClick={() =>
                 append({
-                  nombreCompleto: "",
+                  nombre: "",
+                  apellido: "",
                   cedula: "",
                   fechaNac: "",
                   edad: 0,

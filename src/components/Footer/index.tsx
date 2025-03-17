@@ -58,7 +58,7 @@ const Footer = () => {
                 </p>
                 <a
                   href="#"
-                  className="text-itemtitle font-medium text-black dark:text-white"
+                  className="text-xl font-normal text-black dark:text-white"
                 >
                   necropolisfuneral@gmail.com
                 </a>

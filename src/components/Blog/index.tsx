@@ -42,13 +42,9 @@ const Blog = ({ posts }: Props) => {
       <div className="mx-auto mt-15 max-w-c-1280 px-4 md:px-8 xl:mt-20 xl:px-0">
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
           {noticias &&
-            noticias.slice(0, 3).map((post) => (
-              <BlogItem post={post} key={post.id} />
-
-              //  <div key={post.id}>
-              //   <Image src={post.media_url} alt={post.caption} width={250} height={250}/>
-              //  </div>
-            ))}
+            noticias
+              .slice(0, 3)
+              .map((post) => <BlogItem post={post} key={post.id} />)}
 
           {/* {posts.slice(0, 3).map( (blog, key) => {
               <BlogItem post={post} key={key}/>
