@@ -10,10 +10,10 @@ import {
 import React from "react";
 import featuresData from "@/components/Servicios/featuresData";
 import { Feature } from "@/types/feature";
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
+// import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
-const BlogoPage = ({ params }: Params) => {
-  const articulo = featuresData.find((articulo) => articulo.id === +params.id);
+const BlogoPage = () => {
+  // const articulo = featuresData.find((articulo) => articulo.id === +params.id);
 
   return (
     <Box maxW="800px" mx="auto" p={4} className="rounded-lg bg-white shadow-lg">
@@ -21,14 +21,14 @@ const BlogoPage = ({ params }: Params) => {
 
       <VStack spacing={4} align="start" p={4}>
         <Heading as="h1" size="xl" className="text-black">
-          {articulo?.title}
+          {/* {articulo?.title} */}
         </Heading>
       </VStack>
 
       <Divider className="my-4" />
 
       <Text className="leading-relaxed text-black">
-        {articulo?.description}
+        {/* {articulo?.description} */}
       </Text>
     </Box>
   );
