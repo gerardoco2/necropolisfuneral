@@ -55,6 +55,7 @@ export default function Afiliacion() {
     const response = await fetch(`../api/afiliado/${data.cedula}`);
     const result = await response.json();
     console.log(result);
+
     if (result.status === 200) {
       console.log("existe");
       onOpen();
