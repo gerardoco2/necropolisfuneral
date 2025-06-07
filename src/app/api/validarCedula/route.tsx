@@ -25,18 +25,30 @@ export async function POST(request: NextRequest) {
   const scriptPath = "../archivos-procesa/ejec_pvx_verifica_cedula";
   const command = `bash ${scriptPath}`;
   // console.log("Executing command:", command);
-  await new Promise((resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
-      alert("entro en el exec");
-      if (error) {
-        console.error("Error executing script:", error);
-        reject(error);
-      } else {
-        console.log("Script executed successfully:", stdout);
-        resolve(stdout);
-      }
-    });
+
+  exec(command, (error, stdout, stderr) => {
+    alert("entro en el exec");
+    if (error) {
+      console.error("Error executing script:", error);
+      // reject(error);
+    } else {
+      console.log("Script executed successfully:", stdout);
+      // resolve(stdout);
+    }
   });
+  // await new Promise((resolve, reject) => {
+  //   console.log("antes en el exec");
+  //   exec(command, (error, stdout, stderr) => {
+  //     alert("entro en el exec");
+  //     if (error) {
+  //       console.error("Error executing script:", error);
+  //       reject(error);
+  //     } else {
+  //       console.log("Script executed successfully:", stdout);
+  //       resolve(stdout);
+  //     }
+  //   });
+  //});
   // Respondecon un mensaje de éxito
   // res.status(200).json({ message: "Archivo generado con exito!" });
   return NextResponse.json({ status: 200 });
