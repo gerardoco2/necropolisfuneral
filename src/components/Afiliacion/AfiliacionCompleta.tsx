@@ -236,6 +236,23 @@ const AfiliacionCompleta = () => {
                       required: "Este campo es obligatorio",
                     })}
                   />
+                  <Select
+                    style={{ color: "white" }}
+                    placeholder="Parentesco"
+                    {...register("contrato", {
+                      required: "Por favor, selecciona un parentesco",
+                    })}
+                  >
+                    <option value="01">Esposa (o)</option>
+                    <option value="02">Hija (o)</option>
+                    <option value="03">Madre / Padre</option>
+                    <option value="04">Hermana (o)</option>
+                    <option value="05">Sobrina (o)</option>
+                    <option value="06">Nieta (o)</option>
+                    <option value="07">Tia (o)</option>
+                    <option value="08">Aburla (o)</option>
+                    <option value="09">Prima (o)</option>
+                  </Select>
                 </FormControl>
 
                 <Button
