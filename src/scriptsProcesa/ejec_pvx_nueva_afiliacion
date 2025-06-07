@@ -1,0 +1,6 @@
+#!/bin/sh
+umask 0000
+PVXLIB=/home/pvxweb/lib
+TERM=ansi
+export PVXLIB TERM
+/home/pvxweb/pvx /home/pvx/procesa/RU_VERIF_AFILIA >/dev/null

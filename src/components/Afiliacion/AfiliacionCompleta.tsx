@@ -11,9 +11,11 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
+// import logoBanco from "@/assets/images/logoBanco.jpeg";
 
 interface Beneficiario {
   nombre: string;
@@ -30,6 +32,11 @@ interface AfiliacionCompletaFormData {
   cedula: string;
   numeroCta: string;
   contrato: string;
+  banco: string;
+  monto: number;
+  token: string;
+  telefono: string;
+  cedulaPago: string;
   beneficiario: Beneficiario[];
 }
 
@@ -38,6 +45,8 @@ const AfiliacionCompleta = () => {
   const enviar = () => {
     router.push("/afiliacion/pago");
   };
+
+  const [tasaBcv, setTasaBcv] = useState(98.0); // Valor inicial de la tasa del BCV
 
   const {
     register,
@@ -283,7 +292,91 @@ const AfiliacionCompleta = () => {
               Has alcanzado el límite de 10 beneficiarios.
             </Text>
           )}
+          <Heading as="h2" size="md" mt={6} mb={4}>
+            Registra tu pago :
+          </Heading>
+          <HStack spacing={3}>
+            {/* <Image src={logoBanco} alt={""}></Image> */}
+          </HStack>
 
+          <HStack spacing={3}>
+            <FormControl>
+              <FormLabel>Banco:</FormLabel>
+              <Select
+                style={{ color: "white" }}
+                placeholder="Banco"
+                {...register("banco", {
+                  required: "Por favor, selecciona tu banco",
+                })}
+              >
+                <option value="01">Banco Provincial</option>
+                <option value="01">Banco de Venezuela (BDV)</option>
+                <option value="02">BNC (Banco Nacional de Crédito)</option>
+                <option value="03">Mercantil</option>
+                <option value="04">Bancamiga</option>
+                <option value="05">Banco del Tesoro</option>
+                <option value="06">Banco Bicentenario</option>
+                <option value="07">Banco Exterior</option>
+                <option value="08">Banplus</option>
+                <option value="09">Banco Plaza</option>
+                <option value="10">Banco Caroní</option>
+                <option value="11">Banco del Caribe</option>
+                <option value="12">Banco Activo</option>
+                <option value="13">Banco Sofitasa</option>
+                <option value="14">Banco del Sur</option>
+                <option value="15">Banco Nacional de Finanzas (BFC)</option>
+                <option value="16">
+                  Banco de la Fuerza Armada Nacional (BANFANB)
+                </option>
+              </Select>
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>Cedula:</FormLabel>
+              <Input
+                type="text"
+                placeholder="Cedula"
+                style={{ color: "white" }}
+                {...register("cedulaPago", {
+                  required: "El numero de cedula es obligatorio",
+                })}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Telefono:</FormLabel>
+              <Input
+                type="number"
+                placeholder="Telefono"
+                style={{ color: "white" }}
+                {...register("telefono", {
+                  required: "El telefono es obligatorio",
+                })}
+              />
+            </FormControl>
+          </HStack>
+
+          <HStack mt={5} spacing={3}>
+            <FormControl>
+              <FormLabel>token:</FormLabel>
+              <Input
+                type="number"
+                placeholder="Token del banco por sms"
+                style={{ color: "white !important" }}
+                {...register("token")}
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Monto a Pagar:</FormLabel>
+              <Input
+                type="number"
+                disabled
+                value={`${tasaBcv * 5} Bs.`}
+                placeholder={`${tasaBcv * 5} Bs.`}
+                style={{ color: "white" }}
+                {...register("monto")}
+              />
+            </FormControl>
+          </HStack>
           <HStack mt={5}>
             <Button width="100%" type="submit" onClick={() => enviar()}>
               Enviar inscripcion

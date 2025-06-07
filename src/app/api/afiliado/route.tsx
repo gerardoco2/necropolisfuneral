@@ -24,21 +24,23 @@ export async function POST(request: NextRequest) {
   generaTxt(content, nombreArchivo, directory);
 
   // Ejecuta el script en procesa
-  // const scriptPath = path.join(process.cwd(), "procesa.sh");
-  // const command = `bash ${scriptPath} ${data.cedula}`;
-  // console.log("Executing command:", command);
-  // await new Promise((resolve, reject) => {
-  //   exec(command, (error, stdout, stderr) => {
-  //     if (error) {
-  //       console.error("Error executing script:", error);
-  //       reject(error);
-  //     } else {
-  //       console.log("Script executed successfully:", stdout);
-  //       resolve(stdout);
-  //     }
-  //   });
-  // });
-  // Respondecon un mensaje de éxito
-  // res.status(200).json({ message: "Archivo generado con exito!" });
+  const scriptPath = path.join(
+    process.cwd(),
+    "/src/scriptsProcesa/ejec_pvx_nueva_afiliacion",
+  );
+  const command = `bash ${scriptPath}`;
+  console.log("Executing command:", command);
+  await new Promise((resolve, reject) => {
+    console.log("Executing dentro del promise:", command);
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        console.error("Error executing script:", error);
+        reject(error);
+      } else {
+        console.log("Script executed successfully:", stdout);
+        resolve(stdout);
+      }
+    });
+  });
   return NextResponse.json({ status: 200 });
 }
