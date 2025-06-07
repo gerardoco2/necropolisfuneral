@@ -231,15 +231,10 @@ const AfiliacionCompleta = () => {
 
                 <FormControl>
                   <FormLabel>Parentesco:</FormLabel>
-                  <Input
-                    {...register(`beneficiario.${index}.parentesco`, {
-                      required: "Este campo es obligatorio",
-                    })}
-                  />
                   <Select
                     style={{ color: "white" }}
                     placeholder="Parentesco"
-                    {...register("contrato", {
+                    {...register(`beneficiario.${index}.parentesco`, {
                       required: "Por favor, selecciona un parentesco",
                     })}
                   >
