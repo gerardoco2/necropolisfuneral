@@ -150,8 +150,8 @@ const AfiliacionCompleta = () => {
                 required: "Por favor, selecciona un tipo de contrato",
               })}
             >
-              <option value="individual">Individual</option>
-              <option value="colectivo">Colectivo</option>
+              <option value="26">Coro</option>
+              <option value="25">La Vela</option>
             </Select>
           </HStack>
           {errors.cedula && (

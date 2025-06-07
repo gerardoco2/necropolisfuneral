@@ -11,12 +11,12 @@ export async function POST(request: NextRequest) {
 
   // Define the content and file details
 
-  let content = `Nombre: ${data.nombre}\nApellido: ${data.apellido}\nCedula: ${data.cedula}\nFecha de Nacimiento: ${data.fechaNac}\nEdad: ${data.edad}\nParentesco: ${data.parentesco}`;
+  let content = `${data.cedula}\n${data.nombre} ${data.apellido}\n${data.contrato}`;
 
   for (let i = 0; i < data.beneficiario.length; i++) {
-    content += `\nBeneficiario ${i + 1}:\nNombre: ${data.beneficiario[i].nombre}\nApellido: ${data.beneficiario[i].apellido}\nCedula: ${data.beneficiario[i].cedula}\nFecha de Nacimiento: ${data.beneficiario[i].fechaNac}\nEdad: ${data.beneficiario[i].edad}\nParentesco: ${data.beneficiario[i].parentesco}`;
+    content += `\n${data.beneficiario[i].cedula};${data.beneficiario[i].nombre} ${data.beneficiario[i].apellido};${data.beneficiario[i].fechaNac};${data.beneficiario[i].edad};${data.beneficiario[i].parentesco}`;
   }
-  const nombreArchivo = "cedula.txt";
+  const nombreArchivo = "AFILIACION.TXT";
   const directory = "../archivos-procesa"; // guarda en "generated-files" directory
   //const directory = "./generated-files"; // guarda en "generated-files" directory
 
