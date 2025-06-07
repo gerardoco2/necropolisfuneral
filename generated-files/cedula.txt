@@ -1,0 +1,13 @@
+Nombre: Gerardo
+Apellido: ads
+Cedula: 1234567
+Fecha de Nacimiento: undefined
+Edad: undefined
+Parentesco: undefined
+Beneficiario 1:
+Nombre: benef 
+Apellido: colina
+Cedula: 6917463
+Fecha de Nacimiento: 2020-07-08
+Edad: 4
+Parentesco: Hijo

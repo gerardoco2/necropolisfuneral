@@ -53,7 +53,24 @@ const AfiliacionCompleta = () => {
     name: "beneficiario",
   });
 
-  const onSubmit: SubmitHandler<AfiliacionCompletaFormData> = () => {};
+  const onSubmit: SubmitHandler<AfiliacionCompletaFormData> = async (data) => {
+    try {
+      fetch("/api/afiliado", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+          enviar();
+        });
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   // Función para calcular la edad
   const calcularEdad = (fechaNac: string): number => {
