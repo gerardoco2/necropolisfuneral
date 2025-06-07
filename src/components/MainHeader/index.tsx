@@ -163,7 +163,7 @@ const Header = () => {
             </Link> */}
 
             <Link
-              href="#"
+              href="/auth/signin"
               className="flex items-center justify-center rounded-full border-2 border-solid border-secondary  bg-primary px-4 py-1 text-regular text-white duration-300 ease-in-out hover:bg-[#171716]"
             >
               Acceder
