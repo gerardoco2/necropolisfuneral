@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
 
   // Ejecuta el script en procesa
   const scriptPath = "../archivos-procesa/ejec_pvx_verifica_cedula";
-  const command = `bash ${scriptPath}`;
+  const command = `${scriptPath}`;
   // console.log("Executing command:", command);
 
   exec(command, (error, stdout, stderr) => {
