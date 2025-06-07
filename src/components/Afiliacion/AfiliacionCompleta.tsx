@@ -32,11 +32,11 @@ interface AfiliacionCompletaFormData {
   cedula: string;
   numeroCta: string;
   contrato: string;
-  banco: string;
-  monto: number;
-  token: string;
-  telefono: string;
-  cedulaPago: string;
+  // banco: string;
+  // monto: number;
+  // token: string;
+  // telefono: string;
+  // cedulaPago: string;
   beneficiario: Beneficiario[];
 }
 
@@ -46,7 +46,7 @@ const AfiliacionCompleta = () => {
     router.push("/afiliacion/pago");
   };
 
-  const [tasaBcv, setTasaBcv] = useState(98.0); // Valor inicial de la tasa del BCV
+  // const [tasaBcv, setTasaBcv] = useState(98.0); // Valor inicial de la tasa del BCV
 
   const {
     register,
@@ -299,7 +299,7 @@ const AfiliacionCompleta = () => {
             {/* <Image src={logoBanco} alt={""}></Image> */}
           </HStack>
 
-          <HStack spacing={3}>
+          {/* <HStack spacing={3}>
             <FormControl>
               <FormLabel>Banco:</FormLabel>
               <Select
@@ -376,7 +376,7 @@ const AfiliacionCompleta = () => {
                 {...register("monto")}
               />
             </FormControl>
-          </HStack>
+          </HStack> */}
           <HStack mt={5}>
             <Button width="100%" type="submit" onClick={() => enviar()}>
               Enviar inscripcion
