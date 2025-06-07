@@ -368,7 +368,7 @@ const AfiliacionCompleta = () => {
             <FormControl>
               <FormLabel>Monto a Pagar:</FormLabel>
               <Input
-                type="number"
+                type="text"
                 disabled
                 value={`${tasaBcv * 5} Bs.`}
                 placeholder={`${tasaBcv * 5} Bs.`}
