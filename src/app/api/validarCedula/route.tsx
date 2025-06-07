@@ -27,6 +27,7 @@ export async function POST(request: NextRequest) {
   // console.log("Executing command:", command);
   await new Promise((resolve, reject) => {
     exec("ejec_pvx_verifica_cedula", (error, stdout, stderr) => {
+      alert("entro en el exec");
       if (error) {
         console.error("Error executing script:", error);
         reject(error);
