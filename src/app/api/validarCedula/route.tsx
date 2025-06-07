@@ -22,11 +22,11 @@ export async function POST(request: NextRequest) {
   generaTxt(content, nombreArchivo, directory);
 
   // Ejecuta el script en procesa
-  // const scriptPath = path.join(process.cwd(), "procesa.sh");
-  //const command = `bash ${scriptPath} ${data.cedula}`;
+  const scriptPath = "../archivos-procesa/ejec_pvx_verifica_cedula";
+  const command = `bash ${scriptPath}`;
   // console.log("Executing command:", command);
   await new Promise((resolve, reject) => {
-    exec("ejec_pvx_verifica_cedula", (error, stdout, stderr) => {
+    exec(command, (error, stdout, stderr) => {
       alert("entro en el exec");
       if (error) {
         console.error("Error executing script:", error);
