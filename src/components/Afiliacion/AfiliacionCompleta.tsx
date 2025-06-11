@@ -54,7 +54,7 @@ const AfiliacionCompleta = () => {
     watch,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<AfiliacionCompletaFormData>();
 
   const { fields, append, remove } = useFieldArray({
@@ -378,7 +378,7 @@ const AfiliacionCompleta = () => {
             </FormControl>
           </HStack> */}
           <HStack mt={5}>
-            <Button width="100%" type="submit" onClick={() => enviar()}>
+            <Button width="100%" type="submit" disabled={!isValid}>
               Enviar inscripcion
             </Button>
           </HStack>
