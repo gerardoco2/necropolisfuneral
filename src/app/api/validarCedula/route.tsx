@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
 
         // CONVIERTE EL CONTENIDO DEL ARCHIVO EN UN OBJETO JSON DE TIPO Afiliado
         const lines = data.split("\n");
-        const adiliado: Afiliado = {
+        const afiliado: Afiliado = {
           cedula: lines[0].trim(),
           nombre: lines[1].trim(),
           estatus: lines[2].trim(),
