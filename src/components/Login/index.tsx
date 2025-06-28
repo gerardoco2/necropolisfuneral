@@ -34,7 +34,9 @@ const Login = () => {
       }
 
       const result = await response.json();
-      alert(result.message || "Cédula validada correctamente");
+
+      console.log("Response from API:", result.afiliado);
+      // alert(result.message || "Cédula validada correctamente");
     } catch (err: any) {
       alert(err.message || "Ocurrió un error al validar la cédula");
     }

@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
           }
         }
         console.log("Afiliado object:", afiliado);
-        //return NextResponse.json({ status: 200, afiliado: afiliado });
+        return NextResponse.json({ status: 200, afiliado: afiliado });
         resolve(afiliado);
       });
     });
