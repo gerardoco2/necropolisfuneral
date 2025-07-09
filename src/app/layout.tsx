@@ -33,8 +33,8 @@ export default function RootLayout({
     },
   });
 
-  setTheme("dark");
   useEffect(() => {
+    setTheme("dark");
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
