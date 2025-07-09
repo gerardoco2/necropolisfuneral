@@ -1,4 +1,5 @@
 "use client";
+import { SessionProvider } from "next-auth/react";
 import "jsvectormap/dist/jsvectormap.css";
 import "flatpickr/dist/flatpickr.min.css";
 import "@/css/satoshi.css";
@@ -12,6 +13,7 @@ import MainHeader from "@/components/MainHeader";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
+import { Session } from "inspector";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,21 +48,23 @@ export default function RootLayout({
     //     </div>
     //   </body>
     // </html>
-    <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black dark:text-bodydark ${inter.className}`}>
-        <ThemeProvider
-          enableSystem={false}
-          attribute="class"
-          defaultTheme="dark"
-        >
-          <ChakraProvider theme={themeChakra}>
-            <ColorModeScript
-              initialColorMode={themeChakra.config.initialColorMode}
-            />
-            {children}
-          </ChakraProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <SessionProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`dark:bg-black dark:text-bodydark ${inter.className}`}>
+          <ThemeProvider
+            enableSystem={false}
+            attribute="class"
+            defaultTheme="dark"
+          >
+            <ChakraProvider theme={themeChakra}>
+              <ColorModeScript
+                initialColorMode={themeChakra.config.initialColorMode}
+              />
+              {children}
+            </ChakraProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    </SessionProvider>
   );
 }
