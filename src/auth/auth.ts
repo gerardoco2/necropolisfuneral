@@ -36,15 +36,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         //     body: JSON.stringify({ cedula: credentials?.cedula }),
         //   },
         // );
-        
-          const response = await fetch(
-            "/api/validarCedula",
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ cedula: credentials?.cedula }),
-            },
-          );
+
+        try {
+          const response = await fetch("/api/validarCedula", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ cedula: credentials?.cedula }),
+          });
           if (!response.ok) return null;
           const { afiliado } = await response.json();
           if (afiliado) {
