@@ -36,10 +36,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         //     body: JSON.stringify({ cedula: credentials?.cedula }),
         //   },
         // );
-
-        try {
+        
           const response = await fetch(
-            "https://necropolis.sytes.net/api/validarCedula",
+            "/api/validarCedula",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
