@@ -10,11 +10,10 @@ export const metadata: Metadata = {
 };
 
 const BasicChartPage: React.FC = () => {
-  return (
-    <DefaultLayout>
-      <Chart />
-    </DefaultLayout>
-  );
+  return null;
+  // <DefaultLayout>
+  //   {/* <Chart /> */}
+  // </DefaultLayout>
 };
 
 export default BasicChartPage;

@@ -253,6 +253,7 @@ const Login = () => {
                       type="text"
                       name="cedula"
                       placeholder="Ingresa tu numero de cedula"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                       // {...register("cedula", {
                       //   required: "La cédula es obligatoria",
                       //   pattern: {
@@ -297,11 +298,11 @@ const Login = () => {
                 </div>
 
                 <div className="mb-5">
-                  <input
+                  {/* <input
                     type="submit"
                     value="Ingresar"
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
-                  />
+                  /> */}
                   <button
                     type="submit"
                     className="mt-4 w-full rounded-lg border border-stroke bg-gray p-4 text-center hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50"

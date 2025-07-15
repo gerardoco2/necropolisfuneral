@@ -332,10 +332,7 @@ const menuGroups = [
         ),
         label: "Opciones",
         route: "#",
-        children: [
-          { label: "Sign In", route: "/auth/signin" },
-          { label: "Sign Up", route: "/auth/signup" },
-        ],
+        children: [{ label: "Sign In", route: "/auth/signin" }],
       },
     ],
   },

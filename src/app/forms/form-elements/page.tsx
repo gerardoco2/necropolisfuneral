@@ -10,11 +10,10 @@ export const metadata: Metadata = {
 };
 
 const FormElementsPage = () => {
-  return (
-    <DefaultLayout>
-      <FormElements />
-    </DefaultLayout>
-  );
+  return null;
+  // <DefaultLayout>
+  //   <FormElements />
+  // </DefaultLayout>
 };
 
 export default FormElementsPage;
