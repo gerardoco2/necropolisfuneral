@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,17 +6,19 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { auth, signIn } from "@/auth/auth";
+import { redirect } from "next/navigation";
 
 interface SignInFormData {
   cedula: string;
 }
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<SignInFormData>();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm<SignInFormData>();
 
   const onSubmit: SubmitHandler<SignInFormData> = async (data) => {
     console.log(data);
@@ -35,7 +37,6 @@ const Login = () => {
 
       const result = await response.json();
 
-      console.log("Response from API:", result.afiliado);
       // alert(result.message || "Cédula validada correctamente");
     } catch (err: any) {
       alert(err.message || "Ocurrió un error al validar la cédula");
@@ -201,7 +202,17 @@ const Login = () => {
                 Ingresa a tu cuenta
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form
+                // onSubmit={handleSubmit(onSubmit)}
+                action={async (SignInFormData) => {
+                  "use server";
+
+                  await signIn("credentials", {
+                    cedula: SignInFormData.get("cedula"),
+                    redirectTo: "/admin",
+                  });
+                }}
+              >
                 {/* <div className="mb-4">
                       <label className="mb-2.5 block font-medium text-black dark:text-white">
                         Email
@@ -240,25 +251,26 @@ const Login = () => {
                   <div className="relative">
                     <input
                       type="text"
+                      name="cedula"
                       placeholder="Ingresa tu numero de cedula"
-                      {...register("cedula", {
-                        required: "La cédula es obligatoria",
-                        pattern: {
-                          value: /^[0-9]+$/,
-                          message: "La cédula debe contener solo números",
-                        },
-                      })}
-                      className={`w-full rounded-lg border ${
-                        errors.cedula
-                          ? "border-red-500"
-                          : "border-stroke dark:border-form-strokedark"
-                      } bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:bg-form-input dark:text-white dark:focus:border-primary`}
+                      // {...register("cedula", {
+                      //   required: "La cédula es obligatoria",
+                      //   pattern: {
+                      //     value: /^[0-9]+$/,
+                      //     message: "La cédula debe contener solo números",
+                      //   },
+                      // })}
+                      // className={`w-full rounded-lg border ${
+                      //   errors.cedula
+                      //     ? "border-red-500"
+                      //     : "border-stroke dark:border-form-strokedark"
+                      // } bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:bg-form-input dark:text-white dark:focus:border-primary`}
                     />
-                    {errors.cedula && (
+                    {/* {errors.cedula && (
                       <p className="text-red-500 mt-2 text-sm">
                         {errors.cedula.message}
                       </p>
-                    )}
+                    )} */}
 
                     <span className="absolute right-4 top-4">
                       <svg
@@ -290,6 +302,14 @@ const Login = () => {
                     value="Ingresar"
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
                   />
+                  <button
+                    type="submit"
+                    className="mt-4 w-full rounded-lg border border-stroke bg-gray p-4 text-center hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50"
+                  >
+                    <span className="text-black dark:text-white">
+                      Ingresar con credenciales
+                    </span>
+                  </button>
                 </div>
                 {/* 
     boton de google
